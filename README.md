@@ -9,9 +9,13 @@ Put this somewhere that it can execute within the bin directory of an app. It sh
 
 [script://./bin/meltdown-spectre-check.sh]
 interval = 3600
+
 sourcetype = meltdown_spectre_checker
+
 source = meltdowh-spectre-check.sh
+
 index = main
+
 disabled = 0
 
 Example search:
