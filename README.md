@@ -7,6 +7,8 @@ I added a date/time string to the output, processor details, arch details, and t
 
 Put this somewhere that it can execute within the bin directory of an app. It should execute as root for accurate results, so you may want to setuid it or something.
 
+In limited testing I have seen it execute just fine as something other than root, so if your UF is running as lesser privs, you should be OK.
+
 ```
 [script://./bin/meltdown-spectre-check.sh]
 interval = 3600
