@@ -1,5 +1,5 @@
 # splunk-spectre-meltdown-uf-script
-A script modified from speed47's work to provide KV-pair results into a Splunk UF scripted input
+A script modified from speed47's work to provide KV-pair results into Splunk, via a Universal Forwarder-driven scripted input. This is likely to only work on Linux hosts!
 
 Original can be found here: https://github.com/speed47/spectre-meltdown-checker.
 
