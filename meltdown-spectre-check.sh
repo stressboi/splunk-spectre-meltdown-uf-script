@@ -3,8 +3,14 @@
 # Stephane Lesimple
 # Modified by brodsky@splunk.com to output more friendly for Splunk UF Scripted Input
 VERSION=0.16-SplunkUF
+
+# set a date format so we can output a date for each line
 DATETIME=$(date '+%Y-%m-%d %H:%M:%S %Z')
+
+# what's the IP address of the machine?
 IPADD=$(hostname -I)
+
+# what kind of processor do we have, and trim whitespace
 PROC=$(cat /proc/cpuinfo | grep 'model name' | uniq | cut -c14-80)
 TRIMPROC="$(echo -e "${PROC}" | sed -e 's/[[:space:]]*$//')"
 
