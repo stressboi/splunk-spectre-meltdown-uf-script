@@ -7,7 +7,7 @@ I added a date/time string to the output, processor details, arch details, and t
 
 Put this somewhere that it can execute within the bin directory of an app. According to the original author, it should execute as root for accurate results, so you may want to setuid it or something. That said, you're gonna have a bad time if someone wants to be evil with this, or if you deploy this via deployment server, which would make it easier to be evil. Therefore...
 
-In limited testing I have seen it execute just fine as something other than root, so if your UF is running as lesser privs, you should be OK.
+In limited testing I have seen it execute just fine as something other than root, so if your UF is running as lesser privs, you should be OK. And if you are not OK, you should see that output in the script (and ingested in Splunk) so you can take further action.
 
 ```
 [script://./bin/meltdown-spectre-check.sh]
