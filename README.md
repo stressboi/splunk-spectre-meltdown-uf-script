@@ -7,16 +7,20 @@ I added a date/time string to the output, processor details, arch details, and t
 
 Put this somewhere that it can execute within the bin directory of an app. It should execute as root for accurate results, so you may want to setuid it or something.
 
-```[script://./bin/meltdown-spectre-check.sh]
+```
+[script://./bin/meltdown-spectre-check.sh]
 interval = 3600
 sourcetype = meltdown_spectre_checker
 source = meltdown-spectre-check.sh
 index = main
-disabled = 0```
+disabled = 0
+```
 
-Example search:
+Example search, assuming data goes into "main" index:
 
-```index=main sourcetype=meltdown_spectre_checker
-| stats values(Target_UNAME) as uname, values(Found_IPADDRESS) as "IP Address" values(Found_PROC) as "Processor" values(CVE_2017_5715_STATUS) as "CVE-2017-5715 Spectre 1" values(CVE_2017_2753_STATUS) as "CVE-2017-2753 Spectre 2" values(CVE_2017_5754_STATUS) as "CVE-2017-5754 Meltdown" by host```
+```
+index=main sourcetype=meltdown_spectre_checker
+| stats values(Target_UNAME) as uname, values(Found_IPADDRESS) as "IP Address" values(Found_PROC) as "Processor" values(CVE_2017_5715_STATUS) as "CVE-2017-5715 Spectre 1" values(CVE_2017_2753_STATUS) as "CVE-2017-2753 Spectre 2" values(CVE_2017_5754_STATUS) as "CVE-2017-5754 Meltdown" by host
+```
 
 brodsky@splunk.com
